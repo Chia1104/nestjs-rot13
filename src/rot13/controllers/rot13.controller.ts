@@ -9,7 +9,7 @@ import {
 import { Rot13Service } from '../services';
 import { Rto13Input } from '../dto/rto13.input';
 
-@Controller('rot13')
+@Controller('api/rot13')
 @ApiTags('Rot13')
 export class Rot13Controller {
   constructor(private readonly rot13Service: Rot13Service) {}
