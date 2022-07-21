@@ -2,6 +2,8 @@
 
 A simple API for encrypting and decrypting text using the ROT13 cipher, and build with [Nest.js](https://nestjs.com/).
 
+ - [API Documentation](https://nestjs-rot13.herokuapp.com/api/documentation)
+
 ## Languages and Tools
 
 <div align="center">
