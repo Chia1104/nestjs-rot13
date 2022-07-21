@@ -11,10 +11,4 @@ import { ConfigModule } from '@nestjs/config';
 @Module({
   imports: [Rot13Module, ConfigModule.forRoot()],
 })
-export class AppModule implements NestModule {
-  configure(consumer: MiddlewareConsumer) {
-    consumer
-      .apply(PreAuthMiddleware)
-      .forRoutes({ path: '*', method: RequestMethod.ALL });
-  }
-}
+export class AppModule {}
