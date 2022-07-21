@@ -32,7 +32,7 @@ export class PreAuthMiddleware implements NestMiddleware {
         };
         next();
       })
-      .catch(() => {
+      .catch((e) => {
         PreAuthMiddleware.accessDenied(req.url, res);
       });
   }

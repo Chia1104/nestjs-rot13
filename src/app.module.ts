@@ -15,4 +15,10 @@ import { AppService } from './app.service';
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule implements NestModule {
+  configure(consumer: MiddlewareConsumer) {
+    consumer
+      .apply(PreAuthMiddleware)
+      .forRoutes({ path: '/api/*', method: RequestMethod.ALL });
+  }
+}

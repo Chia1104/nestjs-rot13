@@ -11,6 +11,7 @@ import { Rto13Input } from '../dto/rto13.input';
 
 @Controller('api/rot13')
 @ApiTags('Rot13')
+@ApiBearerAuth()
 export class Rot13Controller {
   constructor(private readonly rot13Service: Rot13Service) {}
 
@@ -18,6 +19,7 @@ export class Rot13Controller {
   @ApiOperation({ summary: 'Rot13' })
   @ApiResponse({ status: 200, type: String })
   @ApiResponse({ status: 403, description: 'Forbidden.' })
+  @ApiResponse({ status: 401, description: 'Unauthorized.' })
   @ApiBody({ type: Rto13Input })
   async rot13(@Body() _rto13: Rto13Input): Promise<string> {
     try {

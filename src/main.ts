@@ -8,6 +8,7 @@ async function bootstrap() {
     .setTitle('ROT13 API')
     .setDescription('rot13 API')
     .setVersion('1.0')
+    .addBearerAuth()
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api/documentation', app, document);
