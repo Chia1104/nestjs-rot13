@@ -11,12 +11,12 @@ async function bootstrap() {
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api/documentation', app, document);
-  await app.listen(process.env.NODE_ENV === 'production' ? 8080 : 3001);
+  await app.listen(process.env.NODE_ENV || 3001);
 }
 bootstrap().then(() =>
   console.log(
     `Server is running on port ${
-      process.env.NODE_ENV === 'production' ? 8080 : 3001
+      process.env.NODE_ENV || 3001
     }`,
   ),
 );
