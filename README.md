@@ -32,12 +32,6 @@ Install the dependencies with [PnPm](https://pnpm.io/)
 $ pnpm install
 ```
 
-Generate Prisma clients and schemas
-
-```bash
-$ prisma generate
-```
-
 Running the app
 
 ```bash
