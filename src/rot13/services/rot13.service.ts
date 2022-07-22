@@ -1,12 +1,14 @@
 import { Injectable } from '@nestjs/common';
+import { Rot13Repository } from '../repositories';
 
 @Injectable()
 export class Rot13Service {
-  rot13(str: string): string {
-    return str.replace(/[a-z]/gi, (c) => {
-      return String.fromCharCode(
-        c.charCodeAt(0) + (c.toUpperCase() < 'N' ? 13 : -13),
-      );
-    });
+  constructor(private readonly rot13Repository: Rot13Repository) {}
+
+  public rot13(str: string): { roted13: string } {
+    const roted = this.rot13Repository.rot13(str);
+    return {
+      roted13: roted,
+    };
   }
 }
